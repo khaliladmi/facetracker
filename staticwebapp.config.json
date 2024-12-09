@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "route": "/login",
+      "route": "https://yellow-sky-0b3771a03.4.azurestaticapps.net/login",
       "methods": [
         "get",
         "post"
