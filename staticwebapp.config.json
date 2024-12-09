@@ -8,7 +8,7 @@
       ]
     },
     {
-      "route": "/dashboard",
+      "route": "https://yellow-sky-0b3771a03.4.azurestaticapps.net/dashboard",
       "methods": [
         "get",
         "post"
