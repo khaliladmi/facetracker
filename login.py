@@ -13,25 +13,24 @@ def index():
     return render_template('index.html')  # No need for 'templates/' folder anymore
 
 # Route for handling login form submission
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    username = request.form['username']
-    password = request.form['password']
-    
-    # Connect to the SQL Server
-    conn = pyodbc.connect(conn_str)
-    cursor = conn.cursor()
-    
-    # Check if the user exists in the database
-    cursor.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
-    user = cursor.fetchone()
-    
-    if user:
-        # If user is found, redirect to a success page
-        return redirect(url_for('dashboard'))
-    else:
-        # If user is not found, return to the login page with an error
-        return "Invalid credentials, please try again."
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        # Connect to the database and check credentials
+        conn = pyodbc.connect(conn_str)
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
+        user = cursor.fetchone()
+        
+        if user:
+            return redirect(url_for('dashboard'))
+        else:
+            return "Invalid credentials, please try again."
+    return render_template('index.html')  # For GET requests, render the login form
+
 
 # Route for the dashboard (after successful login)
 @app.route('/dashboard')
