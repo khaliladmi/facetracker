@@ -4,7 +4,14 @@
       "route": "/login",
       "methods": [
         "get",
-        "post"
+        "post",
+        "head",
+        "put",
+        "delete",
+        "connect",
+        "options",
+        "trace",
+        "patch"
       ]
     },
     {
