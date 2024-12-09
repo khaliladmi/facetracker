@@ -5,8 +5,7 @@
       "methods": [
         "get",
         "post"
-      ],
-      "redirect": "/dashboard"
+      ]
     },
     {
       "route": "/dashboard",
