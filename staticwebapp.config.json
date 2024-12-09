@@ -7,6 +7,13 @@
         "post"
       ],
       "redirect": "/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "methods": [
+        "get",
+        "post"
+      ]
     }
   ]
 }
