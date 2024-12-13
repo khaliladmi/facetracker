@@ -76,7 +76,7 @@ document.getElementById('searchBtn').addEventListener('click', async () => {
 
     try {
         // Appelle le backend pour effectuer la recherche
-        const response = await fetch(`https://facetracker.azurewebsites.net/api/sreach?query=${encodeURIComponent(searchQuery)}`);
+        const response = await fetch(`https://facetracker.azurewebsites.net/api/sreach?code=4RMjfT4JV84OCinWHZ3fkD7jMayJGf8c6HPeEfBAhkJmAzFuWHg2Dw%3D%3D&query=${encodeURIComponent(searchQuery)}`);
 
         
         if (response.ok) {
