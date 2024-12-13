@@ -7,7 +7,7 @@ document.getElementById('loginBtn').addEventListener('click', async (event) => {
 
     try {
         // Envoi de la requête au backend (fonction Azure)
-        let response = await fetch(`https://facetracker.azurewebsites.net/api/login?username=${username}&password=${password}`);
+        let response = await fetch(`https://facetracker.azurewebsites.net/api/login?code=4RMjfT4JV84OCinWHZ3fkD7jMayJGf8c6HPeEfBAhkJmAzFuWHg2Dw%3D%3D&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
         
         if (response.ok) {
             // Si l'authentification réussit, obtenir les données renvoyées
