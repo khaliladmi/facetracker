@@ -112,6 +112,8 @@ function displaySearchResults(results) {
             <th>Age</th>
             <th>Address</th>
             <th>image</th>
+            <th>Wanted</th>
+            
         </tr>
     `;
 
@@ -123,6 +125,7 @@ function displaySearchResults(results) {
             <td>${result.age}</td>
             <td>${result.adresse}</td>
             <td><img src="${result.image_url}" alt="${result.name}'s Image" width="100"></td>
+            <td>${result.wanted}</td>
         `;
         table.appendChild(row);
     });
